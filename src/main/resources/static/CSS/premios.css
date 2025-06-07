@@ -1,0 +1,404 @@
+.desktop {
+  background-color: #13175b;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.desktop .div {
+  background-color: #13175b;
+  overflow: hidden;
+  width: 1440px;
+  height: 1024px;
+  position: relative;
+}
+
+.desktop .overlap {
+  position: absolute;
+  width: 1302px;
+  height: 990px;
+  top: 17px;
+  left: 140px;
+}
+
+.desktop .rectangle {
+  position: absolute;
+  width: 1300px;
+  height: 990px;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 60px 0px 0px 60px;
+}
+
+.desktop .group {
+  position: absolute;
+  width: 367px;
+  height: 990px;
+  top: 0;
+  left: 935px;
+}
+
+.desktop .overlap-group {
+  position: relative;
+  width: 365px;
+  height: 990px;
+  background-color: #ecedfc;
+  border-radius: 18px;
+}
+
+.desktop .rectangle-2 {
+  position: absolute;
+  width: 125px;
+  height: 986px;
+  top: 0;
+  left: 0;
+  background-color: #ecedfc;
+}
+
+.desktop .rectangle-3 {
+  position: absolute;
+  width: 326px;
+  height: 463px;
+  top: 441px;
+  left: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.desktop .frame {
+  display: flex;
+  flex-direction: column;
+  width: 286px;
+  align-items: flex-start;
+  gap: 20px;
+  position: absolute;
+  top: 493px;
+  left: 40px;
+}
+
+.desktop .rectangle-4 {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 63px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.desktop .text-wrapper {
+  position: absolute;
+  top: 440px;
+  left: 130px;
+  -webkit-text-stroke: 0.5px #13175b;
+  font-family: "Jaldi-Regular", Helvetica;
+  font-weight: 400;
+  color: #13175b;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .overlap-wrapper {
+  position: absolute;
+  width: 306px;
+  height: 77px;
+  top: 67px;
+  left: 960px;
+}
+
+.desktop .overlap-2 {
+  position: relative;
+  height: 77px;
+}
+
+.desktop .text-wrapper-2 {
+  position: absolute;
+  width: 211px;
+  top: 12px;
+  left: 0;
+  font-family: "Jaldi-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 24px;
+  text-align: right;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.desktop .group-2 {
+  position: absolute;
+  width: 306px;
+  height: 77px;
+  top: 0;
+  left: 0;
+}
+
+.desktop .image {
+  position: absolute;
+  width: 77px;
+  height: 77px;
+  top: 0;
+  left: 227px;
+  object-fit: cover;
+}
+
+.desktop .text-wrapper-3 {
+  position: absolute;
+  width: 211px;
+  top: 32px;
+  left: 0;
+  font-family: "Jaldi-Regular", Helvetica;
+  font-weight: 400;
+  color: #7b7b7b;
+  font-size: 24px;
+  text-align: right;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.desktop .text-wrapper-4 {
+  position: absolute;
+  width: 288px;
+  top: 72px;
+  left: 96px;
+  -webkit-text-stroke: 0.5px #13175b;
+  font-family: "Jaldi-Regular", Helvetica;
+  font-weight: 400;
+  color: #13175b;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .frame-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 862px;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  position: absolute;
+  top: 156px;
+  left: 59px;
+}
+
+.desktop .frame-2 {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.desktop .overlap-group-wrapper {
+  position: relative;
+  width: 259.17px;
+  height: 288px;
+}
+
+.desktop .overlap-3 {
+  position: relative;
+  width: 257px;
+  height: 288px;
+  background-color: #e1eaff;
+  border-radius: 12px;
+}
+
+.desktop .div-wrapper {
+  position: absolute;
+  width: 228px;
+  height: 25px;
+  top: 250px;
+  left: 20px;
+}
+
+.desktop .overlap-group-2 {
+  position: relative;
+  width: 226px;
+  height: 25px;
+  background-color: #12175a;
+  border-radius: 2px;
+}
+
+.desktop .text-wrapper-5 {
+  position: absolute;
+  width: 100px;
+  top: 7px;
+  left: 63px;
+  font-family: "JejuGothic-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.desktop .text-wrapper-6 {
+  position: absolute;
+  width: 99px;
+  top: 218px;
+  left: 84px;
+  font-family: "Jaldi-Regular", Helvetica;
+  font-weight: 400;
+  color: #13175b;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .illustration-of {
+  position: absolute;
+  width: 169px;
+  height: 169px;
+  top: 22px;
+  left: 44px;
+  object-fit: cover;
+}
+
+.desktop .group-3 {
+  position: relative;
+  width: 259.17px;
+  height: 288px;
+  margin-right: -2.00px;
+}
+
+.desktop .group-4 {
+  position: absolute;
+  width: 94px;
+  height: 38px;
+  top: 80px;
+  left: 786px;
+}
+
+.desktop .mdi-light-bell {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  top: 0;
+  left: 56px;
+}
+
+.desktop .material-symbols {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  top: 0;
+  left: 0;
+}
+
+.desktop .group-5 {
+  position: absolute;
+  width: 311px;
+  height: 210px;
+  top: 206px;
+  left: 958px;
+}
+
+.desktop .overlap-4 {
+  position: relative;
+  width: 315px;
+  height: 210px;
+}
+
+.desktop .ellipse {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 60px;
+  left: 85px;
+  background-color: #13175b;
+  border-radius: 75px;
+}
+
+.desktop .group-6 {
+  position: absolute;
+  width: 315px;
+  height: 202px;
+  top: 0;
+  left: 0;
+}
+
+.desktop .text-wrapper-7 {
+  position: absolute;
+  top: 67px;
+  left: 122px;
+  -webkit-text-stroke: 0.2px #000000;
+  font-family: "Jaldi-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 80px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .UTPCOINS-ACUMULADO {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-text-stroke: 0.3px #13175b;
+  font-family: "Jaldi-Regular", Helvetica;
+  font-weight: 400;
+  color: #13175b;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .frame-3 {
+  position: absolute;
+  width: 140px;
+  height: 1024px;
+  top: 0;
+  left: 0;
+}
+
+.desktop .frame-4 {
+  display: flex;
+  flex-direction: column;
+  width: 65px;
+  align-items: flex-start;
+  gap: 415px;
+  position: relative;
+  top: 119px;
+  left: 38px;
+}
+
+.desktop .frame-5 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 70px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.desktop .iconos {
+  position: relative;
+  width: 65px;
+  height: 65px;
+}
+
+.desktop .img {
+  height: 66.2px;
+  position: relative;
+  width: 65px;
+}
+
+.desktop .iconos-2 {
+  height: 65.5px;
+  margin-bottom: -0.50px;
+  position: relative;
+  width: 65px;
+}

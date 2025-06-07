@@ -11,13 +11,13 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Curso {
+public class Premios {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private long id_curso;
+    private long id_premio;
 
     private String nombre;
     private String descripcion;
-    private String ciclo;
-    private String carrera;
+    private String codigo;
+    private String precio;
 }
