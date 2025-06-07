@@ -1,10 +1,10 @@
 package com.motivizaplus.motivizaplus.Model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.NoArgsConstructor;
+import jakarta.persistence.Entity;
 
-@Data
-@AllArgsConstructor
+@Entity
+@NoArgsConstructor
 public class Usuario {
 
     private String nombre;
