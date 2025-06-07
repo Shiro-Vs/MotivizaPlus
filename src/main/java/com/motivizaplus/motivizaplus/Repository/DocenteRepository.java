@@ -1,9 +1,11 @@
 package com.motivizaplus.motivizaplus.Repository;
+import com.motivizaplus.motivizaplus.Model.Docente;
+
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.motivizaplus.motivizaplus.Model.Docente;
 
-public interface DocenteRepository extends  JpaRepository <Docente, Long> {
-  
+public interface DocenteRepository extends JpaRepository<Docente, String> {
+    Optional<Docente> findByCorreoAndPassword(String email, String password);
 }
