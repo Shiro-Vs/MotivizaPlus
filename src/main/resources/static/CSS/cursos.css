@@ -1,0 +1,61 @@
+
+.container-main {
+    background-color: white;
+    height: calc(100vh - 40px);
+    margin: 20px 0 20px 100px;
+    width: calc(100% - 100px);
+    border-radius: 2rem 0rem 0rem 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    padding: 60px;
+}
+
+/* Botón con fondo */
+.btn-light-purple {
+  background-color: #d8cdff;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 15px;
+  font-weight: bold;
+}
+
+/* Tarjetas de tareas */
+.tarea-card {
+  background-color: #f1efff;
+  border-radius: 20px;
+  border: none;
+}
+
+/* Contenido de la tarjeta con padding */
+.tarea-card .card-body {
+  padding: 20px;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Botón circular */
+.btn-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #0f0f63;
+  color: white;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tipografía responsiva */
+h1, h2, h3, h4, h5, h6 {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+p, span, small, div {
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem); /* <- Ajusta para cambiar tamaño */
+}
+
+/* Evitar que el texto se pegue a los bordes */
+.main-content {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
