@@ -21,7 +21,8 @@
 }
 
 .seccion-izquierda::-webkit-scrollbar {
-    display: none; /* Chrome, Safari y Opera */
+    display: none;
+    /* Chrome, Safari y Opera */
 }
 
 /* Título alineado a la izquierda */
@@ -57,12 +58,185 @@
     width: 60%;
 }
 
-
-/* Barra derecha */
 .barra-derecha {
     flex: 1;
-    background-color: #e8e8e8;
+    display: flex;
+    flex-direction: column;
+    background-color: #e8ebff;
     padding: 20px;
-    height: auto;
-    /* se adaptará a su contenedor padre */
+    height: 100%;
+    overflow: hidden;
+}
+
+
+/* Mini perfil */
+.mini-perfil {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #00000000;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 0 20px;
+    gap: 20px;
+}
+
+.perfil-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.nombre {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.rol {
+    margin: 0;
+    font-size: 14px;
+    color: gray;
+    text-align: left;
+}
+
+.foto-perfil {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 30px;
+}
+
+/* Billetera */
+.billetera {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.377);
+}
+
+.titulo-billetera {
+    margin: 0 0 30px 0;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+}
+
+.contenido-billetera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icono-billetera {
+    width: 65px;
+    height: 65px;
+}
+
+.cantidad-monedas {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.monedas {
+    font-size: 45px;
+    font-weight: bold;
+    color: #13175B;
+}
+
+.icono-moneda {
+    width: 65px;
+    height: 65px;
+}
+
+/*------------------------------------ Actividades pendientes ----------------------------------*/
+
+
+/* Sección tareas */
+.actividades-pendientes {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.titulo-actividades {
+  font-size: 22px;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: bold;
+}
+
+.contenedor-lista {
+    overflow-y: auto;
+    flex-grow: 1;
+    padding-right: 10px;
+}
+
+
+.contenedor-lista::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.lista-actividades {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Cards */
+.actividad-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.actividad-card.urgente {
+    background-color: #ffe5e5;
+    border-left: 5px solid #ff4d4d;
+}
+
+.actividad-card.normal {
+    background-color: #f2f2f2;
+    border-left: 5px solid #ccc;
+}
+
+.info-tarea {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.titulo {
+    margin: 0;
+    font-weight: 500;
+}
+
+.puntos {
+    font-size: 13px;
+    color: #666;
+}
+
+.fecha-vencimiento {
+    font-weight: bold;
+    font-size: 13px;
+    color: #333;
 }
