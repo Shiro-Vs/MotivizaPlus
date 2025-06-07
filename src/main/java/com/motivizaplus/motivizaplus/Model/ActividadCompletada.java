@@ -5,15 +5,18 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 
 @Entity
+@NoArgsConstructor
 @AllArgsConstructor
 public class ActividadCompletada {
 
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private String idActividad;
+    private long idActividad;
+
     private LocalDate fechaCompletada;
     private float calificacion;
     

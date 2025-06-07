@@ -1,0 +1,68 @@
+.container-main {
+    background-color: white;
+    height: calc(100vh - 40px);
+    margin: 20px 0 20px 100px;
+    width: calc(100% - 100px);
+    border-radius: 2rem 0rem 0rem 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+}
+
+.contenido {
+    display: flex;
+    height: 100%;
+}
+
+/* Contenedor de la parte izquierda */
+.seccion-izquierda {
+    flex: 3;
+    padding: 35px;
+    overflow-y: auto;
+}
+
+.seccion-izquierda::-webkit-scrollbar {
+    display: none; /* Chrome, Safari y Opera */
+}
+
+/* Título alineado a la izquierda */
+.titulo-cursos {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Cards a la izquierda */
+.cards {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0px 20px 20px;
+}
+
+/* Cada card */
+.card {
+    width: 400px;
+    height: 400px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Card imagen */
+.card-imagen {
+    width: 60%;
+}
+
+
+/* Barra derecha */
+.barra-derecha {
+    flex: 1;
+    background-color: #e8e8e8;
+    padding: 20px;
+    height: auto;
+    /* se adaptará a su contenedor padre */
+}
