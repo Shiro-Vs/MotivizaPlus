@@ -504,3 +504,50 @@
 .controles-pomodoro button:hover {
   background-color: #3bcc75;
 }
+
+/* Estilo general del widget */
+.card.widget.progreso-curso {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.377);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Cabecera del widget */
+.card.widget.progreso-curso .card-header {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    background-color: #f0f4f800; /* transparente */
+}
+
+/* Texto de progreso */
+.card.widget.progreso-curso p {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Contenedor de la barra de progreso */
+.card.widget.progreso-curso .progress {
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+/* Barra de progreso - color por defecto */
+.card.widget.progreso-curso .progress-bar {
+    background-color: #13175B; /* azul oscuro */
+}
+
+/* Barra de progreso - color éxito */
+.card.widget.progreso-curso .progress-bar.bg-success {
+    background-color: #3bcc75; /* verde */
+}
