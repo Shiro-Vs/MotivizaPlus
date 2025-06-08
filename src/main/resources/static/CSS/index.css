@@ -1,0 +1,182 @@
+:root {
+    --primary: #0056D2;
+    --primary-dark: #0041a8;
+    --bg-light: #F0F4FF;
+    --border: #E2E8F0;
+    --text-dark: #1A1A1A;
+    --text-muted: #6B7280;
+}
+
+/* Reset sencillo */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+}
+
+/* Layout */
+.login-wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+/* IZQUIERDA */
+.login-left {
+    flex: 1;
+    background: var(--bg-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-ill {
+    max-width: 90%;
+    /* más ancho */
+    height: auto;
+}
+
+/* DERECHA */
+.login-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    background: #fff;
+    padding: 3rem;
+    /* más espacio interior */
+    width: 100%;
+    max-width: 450px;
+    /* más ancho */
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    /* títulos e inputs alineados a la izquierda */
+}
+
+/* Logo y textos */
+.login-logo {
+    width: 140px;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+/* Grupos de input */
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+/* Input con icono */
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: 1rem 2.5rem 1rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 1.1rem;
+}
+
+.input-with-icon input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(0, 86, 210, 0.2);
+}
+
+.icon {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+/* Ayuditas y footer */
+.help-text {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.form-footer {
+    text-align: right;
+    margin-bottom: 1.5rem;
+}
+
+.forgot-password {
+    font-size: 0.9rem;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Botón principal */
+.btn-primary {
+    width: 100% ;
+    padding: 1rem;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .login-wrapper {
+        flex-direction: column;
+    }
+
+    .login-left {
+        display: none;
+    }
+
+    .login-right {
+        padding: 2rem 0;
+    }
+}

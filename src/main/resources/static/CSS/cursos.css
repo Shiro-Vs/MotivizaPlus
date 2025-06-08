@@ -23,7 +23,6 @@
 
 .seccion-izquierda::-webkit-scrollbar {
     display: none;
-    /* Chrome, Safari y Opera */
 }
 
 .titulo-cursos {
@@ -37,6 +36,7 @@
   font-size: 14px;
   color: #444;
 }
+
 
 .bloque-semana {
   margin-top: 25px;
@@ -138,6 +138,13 @@
   background-color: #d6f0ff;
   border-left: 6px solid #3498db;
 }
+
+.boton-desactivado {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none; /* Impide clics */
+}
+
 /*-------------------------------------- Modal subir tarea ---------------------------------*/
 /* Fondo modal (oscurece el fondo) */
 .modal {
@@ -155,7 +162,7 @@
 /* Contenido del modal */
 .contenido-modal {
   background-color: white;
-  margin: 10% auto;
+  margin: auto auto;
   padding: 30px;
   border-radius: 20px;
   width: 90%;
@@ -232,6 +239,7 @@
 .btn-enviar:hover {
   background-color: #34b766;
 }
+
 
 /*----------------------------- Seccion derecha -------------------------------*/
 .barra-derecha {
