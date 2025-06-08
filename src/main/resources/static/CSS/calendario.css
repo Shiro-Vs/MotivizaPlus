@@ -1,114 +1,123 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans:400,600,700");
-        #calendar, 
-        #calendar * {
-            font-family: 'Montserrat', sans-serif !important;
-            overflow: hidden !important;
-        }
 
-        td.fc-day {
-            background: #fff !important;
-            font-family: "Open Sans", sans-serif;
-        }
+#calendar,
+#calendar * {
+    font-family: 'Montserrat', sans-serif !important;
+    overflow: hidden !important;
+}
 
-        td.fc-today {
-            background: #fff !important;
-            position: relative;
-        }
+td.fc-day {
+    background: #fff !important;
+    font-family: "Open Sans", sans-serif;
+}
 
-        .fc-first th {
-            font-family: "Open Sans", sans-serif;
-            background: #f7f7f7 !important;
-            color: #36474f;
-            font-size: 14px !important;
-            font-weight: 600 !important;
-            border-top: 1px solid #ccc;
-        }
+td.fc-today {
+    background: #fff !important;
+    position: relative;
+}
 
-        .fc-event-inner {
-            font-family: 'Open Sans', sans-serif;
-            background: #03a9f3 !important;
-            color: #fff !important;
-            font-size: 12px !important;
-            font-weight: 400 !important;
-            padding: 5px 4px !important;
-        }
-        
-        .container-main {
-            background-color: white;
-            height: calc(100vh - 40px);
-            margin: 20px 0 20px 100px;
-            width: calc(100% - 100px);
-            border-radius: 2rem 0rem 0rem 2rem;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-        }
+.fc-first th {
+    font-family: "Open Sans", sans-serif;
+    background: #f7f7f7 !important;
+    color: #36474f;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    border-top: 1px solid #ccc;
+}
 
-        .contenido {
-            display: flex;
-            height: 100%;
-        }
+.fc-event-inner {
+    font-family: 'Open Sans', sans-serif;
+    background: #03a9f3 !important;
+    color: #fff !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    padding: 5px 4px !important;
+}
 
-        .seccion-izquierda {
-            flex: 3;
-            padding: 35px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-        }
+.container-main {
+    background-color: white;
+    height: calc(100vh - 40px);
+    margin: 20px 0 20px 100px;
+    width: calc(100% - 100px);
+    border-radius: 2rem 0rem 0rem 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+}
 
-        .titulo-cursos {
-            margin-bottom: 10px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-        }
+.contenido {
+    display: flex;
+    height: 100%;
+}
 
-        .cards, .card {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
+.seccion-izquierda {
+    flex: 3;
+    padding: 35px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
 
-        #calendar {
-            flex: 1;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 10px;
-        }
+.titulo-cursos {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
 
-        .barra-derecha {
-            flex: 1;
-            background-color: #e8e8e8;
-            padding: 20px;
-            height: auto;
-        }
+.cards,
+.card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#calendar {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.barra-derecha {
+    flex: 1;
+    background-color: #e8e8e8;
+    padding: 20px;
+    height: auto;
+}
 
 
-        .color-evento-1 {
-            background-color: #00ddff !important; /* azul */
-            border-color: #00ddff !important;
-            color: rgb(0, 0, 0) !important;
-        }
-        .color-evento-2 {
-            background-color: #ffa11e !important; /* naranja */
-            border-color: #ffa11e !important;
-            color: rgb(0, 0, 0) !important;
-        }
-        .color-evento-3 {
-            background-color: #ff006f !important; /* rosa */
-            border-color: #ff006f !important;
-            color: rgb(0, 0, 0) !important;
-        }
-        .color-evento-4 {
-            background-color: #4c52f5 !important; /* azul intenso */
-            border-color: #4c52f5 !important;
-            color: rgb(0, 0, 0) !important;
-        }
+.color-evento-1 {
+    background-color: #00ddff !important;
+    /* azul */
+    border-color: #00ddff !important;
+    color: rgb(0, 0, 0) !important;
+}
 
-        /* Estilos selector colores en modal */
-        #selectorColores .btn {
+.color-evento-2 {
+    background-color: #ffa11e !important;
+    /* naranja */
+    border-color: #ffa11e !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+.color-evento-3 {
+    background-color: #ff006f !important;
+    /* rosa */
+    border-color: #ff006f !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+.color-evento-4 {
+    background-color: #4c52f5 !important;
+    /* azul intenso */
+    border-color: #4c52f5 !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+/* Estilos selector colores en modal */
+#selectorColores .btn {
     width: 30px;
     height: 30px;
     padding: 1px;
@@ -131,46 +140,54 @@
 
 /*Mientres este pendiende sacude y pulse*/
 @keyframes pulseShakeRotate {
-  0%, 100% {
-    transform: scale(1) translate(0, 0) rotate(0deg);
-  }
-  25% {
-    transform: scale(1.05) translate(-3px, -3px) rotate(-5deg);
-  }
-  50% {
-    transform: scale(1.1) translate(3px, 3px) rotate(5deg);
-  }
-  75% {
-    transform: scale(1.05) translate(-3px, -3px) rotate(-5deg);
-  }
+
+    0%,
+    100% {
+        transform: scale(1) translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: scale(1.05) translate(-3px, -3px) rotate(-5deg);
+    }
+
+    50% {
+        transform: scale(1.1) translate(3px, 3px) rotate(5deg);
+    }
+
+    75% {
+        transform: scale(1.05) translate(-3px, -3px) rotate(-5deg);
+    }
 }
 
 .evento-pendiente {
-  animation: pulseShakeRotate 1s infinite;
-  border-radius: 6px;
-  border: 2px solid red; /* Opcional para resaltar */
-  transition: all 0.3s ease;
+    animation: pulseShakeRotate 1s infinite;
+    border-radius: 6px;
+    border: 2px solid red;
+    /* Opcional para resaltar */
+    transition: all 0.3s ease;
 }
 
 
 
 
 .evento-completado {
-            background-color: #28a745 !important; /* verde Bootstrap */
-            border-color: #28a745 !important;
-        }
+    background-color: #28a745 !important;
+    /* verde Bootstrap */
+    border-color: #28a745 !important;
+}
 
-        .completado-texto {
-            font-weight: bold;
-            color: black !important;
-            font-size: 0.85em;
-            margin-top: 2px;
-        }
+.completado-texto {
+    font-weight: bold;
+    color: black !important;
+    font-size: 0.85em;
+    margin-top: 2px;
+}
+
 /*------------------MODAL---------------*/
 /* Estilos elegantes para el modal */
 .modal-content {
     border-radius: 1rem !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     border: none;
     background: #ffffff;
     font-family: 'Montserrat', sans-serif;
@@ -194,6 +211,7 @@
     filter: brightness(0.5);
     transition: filter 0.3s ease;
 }
+
 .btn-close:hover {
     filter: brightness(1);
 }
@@ -226,7 +244,7 @@
 
 .modal-footer .btn-primary:hover {
     background-color: #3a3fc1;
-    box-shadow: 0 5px 15px rgba(76,82,245,0.5);
+    box-shadow: 0 5px 15px rgba(76, 82, 245, 0.5);
 }
 
 .modal-footer .btn-success {
@@ -236,7 +254,7 @@
 
 .modal-footer .btn-success:hover {
     background-color: #1e7e34;
-    box-shadow: 0 5px 15px rgba(40,167,69,0.5);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.5);
 }
 
 .modal-footer .btn-secondary {
@@ -247,7 +265,7 @@
 
 .modal-footer .btn-secondary:hover {
     background-color: #5a6268;
-    box-shadow: 0 5px 15px rgba(108,117,125,0.5);
+    box-shadow: 0 5px 15px rgba(108, 117, 125, 0.5);
 }
 
 /* Inputs del modal ---------------------------------------*/
@@ -264,12 +282,8 @@
 .modal-body input[type="time"]:focus {
     outline: none;
     border-color: #4c52f5;
-    box-shadow: 0 0 5px rgba(76,82,245,0.5);
+    box-shadow: 0 0 5px rgba(76, 82, 245, 0.5);
 }
-/* Ajustar título del mes */
-/* ---------- Estilo general para la tabla del calendario ---------- */
-/* ================= ESTILO AJUSTADO PARA EL CALENDARIO ================= */
-/* ==================== DISEÑO MODERNO DE LA TABLA DEL CALENDARIO ==================== */
 
 /* Tipografía y comportamiento interno */
 #calendar,
@@ -352,13 +366,14 @@
 
 /* (Obsoleto) Estilo antiguo que ya no se usa en versiones modernas */
 .fc-event-inner {
-    display: none; /* Evita conflictos visuales */
+    display: none;
 }
 
 /* (Opcional) Botón de vista mensual si lo usas */
 .fc-month-button {
     background-color: #7093b9;
 }
+
 /* Estilo para todos los botones de la barra de herramientas del calendario */
 .fc .fc-button {
     background-color: #4c52f5;
@@ -371,7 +386,7 @@
     margin: 0 4px;
     border-radius: 8px;
     transition: background-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* Hover en botones */
@@ -390,4 +405,139 @@
 .fc .fc-icon {
     font-size: 1.2rem;
     vertical-align: middle;
+}
+
+/* Mini perfil */
+.mini-perfil {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #00000000;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 0 20px;
+    gap: 20px;
+}
+
+.perfil-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.nombre {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.rol {
+    margin: 0;
+    font-size: 14px;
+    color: gray;
+    text-align: left;
+}
+
+.foto-perfil {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 30px;
+}
+
+/* Estilo general para los widgets */
+.card.widget {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.377);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Cabecera del widget */
+.card.widget .card-header {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    background-color: #f0f4f800;
+}
+
+/* Lista dentro del widget de próximas actividades */
+.card.widget.proximas-actividades ul.list-group {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Ocultar scrollbar para Webkit */
+.card.widget.proximas-actividades ul.list-group::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+/* Items individuales de la lista de actividades */
+.card.widget.proximas-actividades ul.list-group li.list-group-item {
+    background-color: #cde6fd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+/* Progreso del curso: texto y barra */
+.card.widget.progreso-curso p {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Barra de progreso */
+.card.widget.progreso-curso .progress {
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.card.widget.progreso-curso .progress-bar {
+    background-color: #13175B; /* color azul oscuro */
+}
+
+/* Barra de progreso con clase bg-success */
+.card.widget.progreso-curso .progress-bar.bg-success {
+    background-color: #3bcc75; /* verde similar al ejemplo */
+}
+
+/* Frase del día (blockquote) */
+.card.widget.frase-dia blockquote {
+    font-style: italic;
+    font-size: 16px;
+    color: #555;
+    margin: 0;
+    padding-left: 15px;
+    border-left: 4px solid #13175B;
+}
+
+.card.widget.frase-dia footer.blockquote-footer {
+    font-size: 14px;
+    color: #999;
+    margin-top: 10px;
+    text-align: right;
 }
