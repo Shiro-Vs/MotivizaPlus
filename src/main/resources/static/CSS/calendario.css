@@ -448,67 +448,68 @@ td.fc-today {
     margin-right: 30px;
 }
 
-/* Estilo general para los widgets */
+/* ===== Estilo general de widgets ===== */
 .card.widget {
-    background-color: #ffffff;
+    background-color: #fff;
+    width: 100%;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.377);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.38);
     display: flex;
     flex-direction: column;
     overflow: hidden;
 }
 
-/* Cabecera del widget */
 .card.widget .card-header {
     font-size: 22px;
     font-weight: bold;
     color: #333;
     margin-bottom: 15px;
-    background-color: #f0f4f800;
+    background: transparent;
 }
 
-/* Lista dentro del widget de próximas actividades */
-.card.widget.proximas-actividades ul.list-group {
+/* ===== Próximas Actividades ===== */
+.card.widget.proximas-actividades {
+    max-height: 600px; /* más alto */
+    overflow-y: hidden; /* oculta scroll */
+}
+
+.card.widget.proximas-actividades ul {
     list-style: none;
-    padding: 0;
+    padding: 0 10px 0 0;
     margin: 0;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-height: 250px;
     overflow-y: auto;
-    padding-right: 10px;
 }
 
-/* Ocultar scrollbar para Webkit */
-.card.widget.proximas-actividades ul.list-group::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
+/* Ocultar scrollbar en Webkit */
+.card.widget.proximas-actividades ul::-webkit-scrollbar {
+    display: none;
 }
 
-/* Items individuales de la lista de actividades */
-.card.widget.proximas-actividades ul.list-group li.list-group-item {
-    background-color: #cde6fd;
+/* Ítems de la lista */
+.card.widget.proximas-actividades li {
+    background: #cde6fd;
     border-radius: 8px;
     padding: 15px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     font-size: 14px;
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 4px;
 }
 
-/* Progreso del curso: texto y barra */
+/* ===== Progreso del curso ===== */
 .card.widget.progreso-curso p {
     font-size: 16px;
-    margin-bottom: 8px;
     font-weight: 500;
     color: #333;
+    margin-bottom: 8px;
 }
 
-/* Barra de progreso */
 .card.widget.progreso-curso .progress {
     height: 20px;
     border-radius: 10px;
@@ -517,15 +518,14 @@ td.fc-today {
 }
 
 .card.widget.progreso-curso .progress-bar {
-    background-color: #13175B; /* color azul oscuro */
+    background-color: #13175B;
 }
 
-/* Barra de progreso con clase bg-success */
 .card.widget.progreso-curso .progress-bar.bg-success {
-    background-color: #3bcc75; /* verde similar al ejemplo */
+    background-color: #3bcc75;
 }
 
-/* Frase del día (blockquote) */
+/* ===== Frase del día ===== */
 .card.widget.frase-dia blockquote {
     font-style: italic;
     font-size: 16px;
