@@ -1,100 +1,393 @@
-.container-main {
-    background-color: white;
-    height: calc(100vh - 40px);
-    margin: 20px 0 20px 100px;
-    width: calc(100% - 100px);
-    border-radius: 2rem 0rem 0rem 2rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans:400,600,700");
+        #calendar, 
+        #calendar * {
+            font-family: 'Montserrat', sans-serif !important;
+            overflow: hidden !important;
+        }
+
+        td.fc-day {
+            background: #fff !important;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        td.fc-today {
+            background: #fff !important;
+            position: relative;
+        }
+
+        .fc-first th {
+            font-family: "Open Sans", sans-serif;
+            background: #f7f7f7 !important;
+            color: #36474f;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            border-top: 1px solid #ccc;
+        }
+
+        .fc-event-inner {
+            font-family: 'Open Sans', sans-serif;
+            background: #03a9f3 !important;
+            color: #fff !important;
+            font-size: 12px !important;
+            font-weight: 400 !important;
+            padding: 5px 4px !important;
+        }
+        
+        .container-main {
+            background-color: white;
+            height: calc(100vh - 40px);
+            margin: 20px 0 20px 100px;
+            width: calc(100% - 100px);
+            border-radius: 2rem 0rem 0rem 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+        }
+
+        .contenido {
+            display: flex;
+            height: 100%;
+        }
+
+        .seccion-izquierda {
+            flex: 3;
+            padding: 35px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .titulo-cursos {
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .cards, .card {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #calendar {
+            flex: 1;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .barra-derecha {
+            flex: 1;
+            background-color: #e8e8e8;
+            padding: 20px;
+            height: auto;
+        }
+
+
+        .color-evento-1 {
+            background-color: #00ddff !important; /* azul */
+            border-color: #00ddff !important;
+            color: rgb(0, 0, 0) !important;
+        }
+        .color-evento-2 {
+            background-color: #ffa11e !important; /* naranja */
+            border-color: #ffa11e !important;
+            color: rgb(0, 0, 0) !important;
+        }
+        .color-evento-3 {
+            background-color: #ff006f !important; /* rosa */
+            border-color: #ff006f !important;
+            color: rgb(0, 0, 0) !important;
+        }
+        .color-evento-4 {
+            background-color: #4c52f5 !important; /* azul intenso */
+            border-color: #4c52f5 !important;
+            color: rgb(0, 0, 0) !important;
+        }
+
+        /* Estilos selector colores en modal */
+        #selectorColores .btn {
+    width: 30px;
+    height: 30px;
+    padding: 1px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.contenido {
-    display: flex;
-    height: 100%;
+#selectorColores .btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Contenedor de la parte izquierda */
-.seccion-izquierda {
-    flex: 3;
-    padding: 35px;
-    overflow-y: auto;
+#selectorColores .btn.selected {
+    border-color: black;
+    transform: scale(1.2);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
 
-.seccion-izquierda::-webkit-scrollbar {
-    display: none; /* Chrome, Safari y Opera */
+/*Mientres este pendiende sacude y pulse*/
+@keyframes pulseShakeRotate {
+  0%, 100% {
+    transform: scale(1) translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.05) translate(-3px, -3px) rotate(-5deg);
+  }
+  50% {
+    transform: scale(1.1) translate(3px, 3px) rotate(5deg);
+  }
+  75% {
+    transform: scale(1.05) translate(-3px, -3px) rotate(-5deg);
+  }
 }
 
-/* Título alineado a la izquierda */
-.titulo-cursos {
-    margin-bottom: 10px;
-    font-size: 24px;
-    font-weight: bold;
+.evento-pendiente {
+  animation: pulseShakeRotate 1s infinite;
+  border-radius: 6px;
+  border: 2px solid red; /* Opcional para resaltar */
+  transition: all 0.3s ease;
+}
+
+
+
+
+.evento-completado {
+            background-color: #28a745 !important; /* verde Bootstrap */
+            border-color: #28a745 !important;
+        }
+
+        .completado-texto {
+            font-weight: bold;
+            color: black !important;
+            font-size: 0.85em;
+            margin-top: 2px;
+        }
+/*------------------MODAL---------------*/
+/* Estilos elegantes para el modal */
+.modal-content {
+    border-radius: 1rem !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border: none;
+    background: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.modal-header {
+    border-bottom: none;
+    padding: 1.5rem 2rem;
+    background: #f0f4f8;
+    border-top-left-radius: 1rem !important;
+    border-top-right-radius: 1rem !important;
+}
+
+.modal-title {
+    font-weight: 700;
+    font-size: 1.5rem;
     color: #333;
 }
 
-/* Cards a la izquierda */
+.btn-close {
+    filter: brightness(0.5);
+    transition: filter 0.3s ease;
+}
+.btn-close:hover {
+    filter: brightness(1);
+}
 
+.modal-body {
+    padding: 2rem;
+    color: #555;
+    font-size: 1rem;
+}
 
-/* Cada card */
-.card {
-    width: 400px;
-    height: 400px;
-    background-color: #f0f0f0;
+.modal-footer {
+    border-top: none;
+    padding: 1.5rem 2rem;
+    background: #f0f4f8;
+    border-bottom-left-radius: 1rem !important;
+    border-bottom-right-radius: 1rem !important;
+}
+
+.modal-footer .btn {
+    border-radius: 50px;
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-footer .btn-primary {
+    background-color: #4c52f5;
+    border: none;
+}
+
+.modal-footer .btn-primary:hover {
+    background-color: #3a3fc1;
+    box-shadow: 0 5px 15px rgba(76,82,245,0.5);
+}
+
+.modal-footer .btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.modal-footer .btn-success:hover {
+    background-color: #1e7e34;
+    box-shadow: 0 5px 15px rgba(40,167,69,0.5);
+}
+
+.modal-footer .btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    color: white;
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: #5a6268;
+    box-shadow: 0 5px 15px rgba(108,117,125,0.5);
+}
+
+/* Inputs del modal ---------------------------------------*/
+.modal-body input[type="text"],
+.modal-body input[type="time"] {
+    border-radius: 0.5rem;
+    border: 1.5px solid #ccc;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.modal-body input[type="text"]:focus,
+.modal-body input[type="time"]:focus {
+    outline: none;
+    border-color: #4c52f5;
+    box-shadow: 0 0 5px rgba(76,82,245,0.5);
+}
+/* Ajustar título del mes */
+/* ---------- Estilo general para la tabla del calendario ---------- */
+/* ================= ESTILO AJUSTADO PARA EL CALENDARIO ================= */
+/* ==================== DISEÑO MODERNO DE LA TABLA DEL CALENDARIO ==================== */
+
+/* Tipografía y comportamiento interno */
+#calendar,
+#calendar * {
+    font-family: 'Montserrat', sans-serif !important;
+    overflow: hidden !important;
+}
+
+/* Contenedor general del calendario */
+#calendar .fc-view-harness {
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #dce3ec;
+    background-color: #fdfdfd;
+    padding: 16px;
+}
+
+/* Título del mes */
+.fc-toolbar-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2f3e50;
+}
+
+/* Cabecera de días (lunes a domingo) */
+#calendar th,
+.fc-first th {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #eff3f9 !important;
+    color: #3a4b5c;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    padding: 14px 0;
+    border-bottom: 1px solid #d1dae6;
+    text-transform: uppercase;
+}
+
+/* Celdas por día */
+#calendar td.fc-day {
+    background-color: #fff !important;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    color: #404040;
     padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    border: 1px solid #edf0f4;
+    vertical-align: top;
+    transition: background 0.2s ease;
 }
 
-/* Card imagen */
-.card-imagen {
-    width: 60%;
+/* Día actual resaltado */
+#calendar td.fc-today {
+    background-color: #fffbe6 !important;
+    border: 2px solid #f7c96f;
+    position: relative;
 }
 
-/* Barra derecha */
-.barra-derecha {
-  flex: 1;
-  background-color: #e8e8e8;
-  padding: 20px;
-  height: auto;
+/* Eventos dentro del calendario */
+#calendar .fc-event {
+    background-color: #f0f8ff;
+    color: #2f3e50;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    border-left: 5px solid #6e90c9;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.mini-perfil {
-  display: flex;
-  align-items: center; 
-  justify-content: flex-end;
-  background-color: #00000000;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 0 0 20px;
-  gap: 20px; 
+/* Efecto hover en eventos */
+#calendar .fc-event:hover {
+    background-color: #e3efff;
+    cursor: pointer;
 }
 
-.perfil-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end; 
+/* (Obsoleto) Estilo antiguo que ya no se usa en versiones modernas */
+.fc-event-inner {
+    display: none; /* Evita conflictos visuales */
 }
 
-.nombre {
-  margin: 0;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: left;
+/* (Opcional) Botón de vista mensual si lo usas */
+.fc-month-button {
+    background-color: #7093b9;
+}
+/* Estilo para todos los botones de la barra de herramientas del calendario */
+.fc .fc-button {
+    background-color: #4c52f5;
+    border: none;
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 6px 14px;
+    margin: 0 4px;
+    border-radius: 8px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.rol {
-  margin: 0;
-  font-size: 14px;
-  color: gray;
-  text-align: left;
+/* Hover en botones */
+.fc .fc-button:hover {
+    background-color: #3a3fc1;
+    box-shadow: 0 3px 12px rgba(76, 82, 245, 0.4);
 }
 
-.foto-perfil {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 30px;
+/* Botón activo (por ejemplo, si estás en vista "mes") */
+.fc .fc-button.fc-button-active {
+    background-color: #2f35b0;
+    box-shadow: 0 3px 12px rgba(47, 53, 176, 0.3);
+}
+
+/* Íconos dentro de botones (flechas, etc.) */
+.fc .fc-icon {
+    font-size: 1.2rem;
+    vertical-align: middle;
 }

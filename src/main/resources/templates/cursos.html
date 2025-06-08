@@ -16,70 +16,235 @@
 
 <body>
   <div th:replace="/Fragments/NavBar :: Navbar"></div>
-  <!-- Main content -->
+
+  <!-- Contenido principal -->
   <div class="container-main">
     <div class="contenido">
-      <!-- Header -->
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <div>
-          <h2 class="fw-bold">INTEGRADOR</h2>
-        </div>
-        <div class="d-flex align-items-center gap-3">
-          <div class="text-end">
-            <small>Isabel López Huamani</small><br>
-            <span class="text-muted" style="font-size: 0.8rem;">Profesora</span>
+
+      <!--------------------  Lado izquierdo ------------------------>
+      <div class="seccion-izquierda">
+        <h1 class="titulo-cursos">Integrador</h1>
+        <p class="descripcion-cursos">Sección: 32456</p>
+        <p class="descripcion-cursos">Docente: Ing. Robert Vasquez</p>
+
+        <!-- Semana 1 -->
+        <div class="bloque-semana">
+          <h2 class="titulo-semana">Semana 1</h2>
+          <div class="card-tarea realizada">
+            <div class="info-izquierda">
+              <h3 class="titulo-tarea">Informe inicial</h3>
+              <p class="descripcion-tarea">Descripción breve del informe inicial.</p>
+              <span class="fecha-vencimiento">Vence: 06/06 - 23:59</span>
+            </div>
+            <div class="puntos-tarea">+15 pts</div>
+            <div class="accion-derecha">
+              <p class="texto-accion">Ir a la actividad</p>
+              <button class="boton-ir">Acceder</button>
+            </div>
           </div>
-          <img src="foto-perfil.jpg" alt="Perfil" class="rounded-circle" width="40" height="40">
+        </div>
+
+        <!-- Semana 2 -->
+        <div class="bloque-semana">
+          <h2 class="titulo-semana">Semana 2</h2>
+          <div class="card-tarea por-vencer">
+            <div class="info-izquierda">
+              <h3 class="titulo-tarea">Entrega parcial</h3>
+              <p class="descripcion-tarea">Avance del proyecto integrador.</p>
+              <span class="fecha-vencimiento">Vence: 10/06 - 23:59</span>
+            </div>
+            <div class="puntos-tarea">+20 pts</div>
+            <div class="accion-derecha">
+              <p class="texto-accion">Ir a la actividad</p>
+              <button class="boton-ir">Acceder</button>
+            </div>
+          </div>
+
+          <div class="card-tarea no-realizada">
+            <div class="info-izquierda">
+              <h3 class="titulo-tarea">Autoevaluación</h3>
+              <p class="descripcion-tarea">Cuestionario sobre avances.</p>
+              <span class="fecha-vencimiento">Vence: 10/06 - 17:00</span>
+            </div>
+            <div class="puntos-tarea">+10 pts</div>
+            <div class="accion-derecha">
+              <p class="texto-accion">Ir a la actividad</p>
+              <button class="boton-ir">Acceder</button>
+            </div>
+          </div>
+
+          <div class="card-tarea pendiente">
+            <div class="info-izquierda">
+              <h3 class="titulo-tarea">Informe final</h3>
+              <p class="descripcion-tarea">Entrega completa del proyecto.</p>
+              <span class="fecha-vencimiento">Vence: 14/06 - 23:59</span>
+            </div>
+            <div class="puntos-tarea">+25 pts</div>
+            <div class="accion-derecha">
+              <p class="texto-accion">Ir a la actividad</p>
+              <button class="boton-ir">Acceder</button>
+            </div>
+          </div>
+
+          <!-- Semana 1 -->
+          <div class="bloque-semana">
+            <h2 class="titulo-semana">Semana 3</h2>
+            <div class="card-tarea realizada">
+              <div class="info-izquierda">
+                <h3 class="titulo-tarea">Informe inicial</h3>
+                <p class="descripcion-tarea">Descripción breve del informe inicial.</p>
+                <span class="fecha-vencimiento">Vence: 06/06 - 23:59</span>
+              </div>
+              <div class="puntos-tarea">+15</div>
+              <div class="accion-derecha">
+                <p class="texto-accion">Ir a la actividad</p>
+                <button class="boton-ir">Acceder</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Semana 1 -->
+          <div class="bloque-semana">
+            <h2 class="titulo-semana">Semana 4</h2>
+            <div class="card-tarea realizada">
+              <div class="info-izquierda">
+                <h3 class="titulo-tarea">Informe inicial</h3>
+                <p class="descripcion-tarea">Descripción breve del informe inicial.</p>
+                <span class="fecha-vencimiento">Vence: 06/06 - 23:59</span>
+              </div>
+              <div class="puntos-tarea">+15 pts</div>
+              <div class="accion-derecha">
+                <p class="texto-accion">Ir a la actividad</p>
+                <button class="boton-ir">Acceder</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Semana 1 -->
+          <div class="bloque-semana">
+            <h2 class="titulo-semana">Semana 5</h2>
+            <div class="card-tarea realizada">
+              <div class="info-izquierda">
+                <h3 class="titulo-tarea">Informe inicial</h3>
+                <p class="descripcion-tarea">Descripción breve del informe inicial.</p>
+                <span class="fecha-vencimiento">Vence: 06/06 - 23:59</span>
+              </div>
+              <div class="puntos-tarea">+15 pts</div>
+              <div class="accion-derecha">
+                <p class="texto-accion">Ir a la actividad</p>
+                <button class="boton-ir">Acceder</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Semana 1 -->
-      <div class="semana mb-4">
-        <h5 class="fw-bold">SEMANA 1</h5>
 
-        <div class="card tarea-card mb-2">
-          <div class="card-body d-flex justify-content-between align-items-center flex-wrap">
-            <div>
-              <div class="fw-bold">TAREA 1:</div>
-              <div>5 puntos</div>
+
+      <!------------------ Barra lateral a la derecha -------------------->
+      <div class="barra-derecha">
+        <div class="mini-perfil">
+          <div class="perfil-info">
+            <h5 class="nombre">Diego Castro</h5>
+            <p class="rol">Estudiante</p>
+          </div>
+          <img src="/Recursos/perfil.jpg" alt="Foto de perfil" class="foto-perfil">
+        </div>
+
+        <!-- Sección Pomodoro -->
+        <div class="pomodoro-avanzado">
+          <h3 class="titulo-pomodoro">POMODORO</h3>
+
+          <!-- Botones de modo -->
+          <div class="modos-pomodoro">
+            <button onclick="setModo('pomodoro')">Pomodoro</button>
+            <button onclick="setModo('descanso-corto')">Pausa corta</button>
+            <button onclick="setModo('descanso-largo')">Pausa larga</button>
+          </div>
+
+          <!-- Círculo del temporizador -->
+          <div class="contenedor-circulo">
+            <div class="circulo-temporizador">
+              <span id="temporizador">25:00</span>
             </div>
-            <div>Completa la encuesta que se ha realizado en clase</div>
-            <button class="btn btn-circle"><i class="bi bi-arrow-right"></i></button>
+          </div>
+
+          <!-- Controles -->
+          <div class="controles-pomodoro">
+            <button onclick="iniciarPomodoro()">Iniciar</button>
+            <button onclick="pausarPomodoro()">Pausar</button>
+            <button onclick="reiniciarPomodoro()">Reiniciar</button>
           </div>
         </div>
 
-        <div class="card tarea-card mb-2">
-          <div class="card-body d-flex justify-content-between align-items-center flex-wrap">
-            <div>
-              <div class="fw-bold">TAREA 2:</div>
-              <div>9 puntos</div>
+        <!-- Sección puntos y estadísticas -->
+        <div class="box-puntos">
+          <div class="contenido-puntos">
+            <!-- Puntos del curso -->
+            <div class="monto-puntos">
+              <p class="titulo-puntos">Puntos del curso</p>
+              <div class="valor-puntos">
+                <span>120</span>
+                <img src="/Recursos/utpcoin.png" alt="Moneda" class="img-moneda">
+              </div>
             </div>
-            <div>Verifica tu avance en la plataforma</div>
-            <button class="btn btn-circle"><i class="bi bi-arrow-right"></i></button>
+            <!-- Estadísticas de tareas -->
+            <div class="resumen-tareas">
+              <div class="item-tarea">
+                <p class="titulo-tarea">Tareas realizadas</p>
+                <p class="valor-tarea">5</p>
+              </div>
+              <div class="item-tarea">
+                <p class="titulo-tarea">Pendientes</p>
+                <p class="valor-tarea">12</p>
+              </div>
+              <div class="item-tarea">
+                <p class="titulo-tarea">No realizadas</p>
+                <p class="valor-tarea">3</p>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- Leyenda de colores -->
+        <div class="leyenda-tareas">
+          <h3 class="titulo-leyenda">Leyenda de actividades</h3>
+          <div class="items-leyenda">
+            <div class="item-leyenda">
+              <span class="circulo verde"></span>
+              <span class="texto-leyenda">Realizada</span>
+            </div>
+            <div class="item-leyenda">
+              <span class="circulo naranja"></span>
+              <span class="texto-leyenda">Por vencer</span>
+            </div>
+            <div class="item-leyenda">
+              <span class="circulo rojo"></span>
+              <span class="texto-leyenda">No realizada</span>
+            </div>
+            <div class="item-leyenda">
+              <span class="circulo celeste"></span>
+              <span class="texto-leyenda">Pendiente</span>
+            </div>
+          </div>
+        </div>
+
+
+
+
       </div>
 
-      <!-- Semana 2 -->
-      <div class="semana">
-        <h5 class="fw-bold">SEMANA 2</h5>
 
-        <div class="card tarea-card mb-2">
-          <div class="card-body d-flex justify-content-between align-items-center flex-wrap">
-            <div>
-              <div class="fw-bold">TAREA 1:</div>
-              <div>8 puntos</div>
-            </div>
-            <div>Completa la evaluación de lectura</div>
-            <button class="btn btn-circle"><i class="bi bi-arrow-right"></i></button>
-          </div>
-        </div>
-      </div>
     </div>
+
   </div>
+  </div>
+
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script para el temporizador Pomodoro -->
+  <script src="/JavaScript/Pomodoro.js"></script>
 </body>
 
 </html>

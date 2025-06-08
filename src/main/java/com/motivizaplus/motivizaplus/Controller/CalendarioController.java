@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class CalendarioController {
     
     @GetMapping("/calendario")
-    public String mostrarInicio() {
+    public String mostrarCalendario() {
         return "calendario"; 
     }
     

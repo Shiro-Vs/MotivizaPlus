@@ -5,60 +5,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- Bootstrap y estilos propios -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <!-- Compnentes -->
+
+    <!-- FullCalendar CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.9.1/fullcalendar.min.css" />
+
+    <!-- Estilos personalizados -->
     <link rel="stylesheet" th:href="@{/CSS/calendario.css}">
     <link rel="stylesheet" th:href="@{/CSS/Componentes/Globales.css}">
     <link rel="stylesheet" th:href="@{/CSS/Componentes/NavBar.css}">
 </head>
 
 <body class="d-flex">
-
-    <!-- Navbar -->
+    
     <div th:replace="/Fragments/NavBar :: Navbar"></div>
 
-    <!-- Contenido principal -->
     <div class="container-main">
         <div class="contenido">
-
-            <!-- Título del lado izquierdo -->
             <div class="seccion-izquierda">
-                <h1 class="titulo-cursos">Calendario personal</h1>
-
+                <h1 class="titulo-cursos">Cursos Disponibles</h1>
                 <div class="cards">
-                    <!-- Cards aquí -->
-                    <div class="card-body p-4">
-                        <div id="bsb-calendar-1"
-                            class="fc fc-media-screen fc-direction-ltr fc-theme-bootstrap5 bsb-calendar-theme"></div>
-                    </div>
+    <!---------------------------------CALENDARIO-------------------------------->
+                    <div id="calendar"></div>
 
                 </div>
             </div>
-
-             <!-- Barra lateral a la derecha -->
+    <!---------------------------------ACTIVIDADES-------------------------------->
             <div class="barra-derecha">
-                <div class="mini-perfil">
-                    <div class="perfil-info">
-                        <h5 class="nombre">Diego Castro</h5>
-                        <p class="rol">Estudiante</p>
-                    </div>
-                    <img src="/Recursos/perfil.jpg" alt="Foto de perfil" class="foto-perfil">
-                </div>
+                <p>Barra lateral</p>
+            </div>
+        </div>
+    </div>
 
-                <!-- Aquí puedes seguir agregando otras secciones como actividades -->
-                <div class="otras-secciones">
-                    <p>Contenido adicional aquí...</p>
+    <!-- Modal para añadir/editar tarea --------------------------------->
+    <div class="modal fade" id="tareaModal" tabindex="-1" aria-labelledby="tareaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tareaModalLabel">Agregar / Editar Tarea</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+        <!---------Agregar tareas items-------------------->
+                <div class="modal-body">
+                    <input type="text" id="tareaTitulo" class="form-control mb-2" placeholder="Título de la tarea" required>
+                    <input type="text" id="descripcion" class="form-control mb-2" placeholder="Describe la tarea" required>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="horaInicio" class="form-label">Hora inicio</label>
+                            <input type="time" id="horaInicio" class="form-control" required>
+                        </div>
+                        <div class="col">
+                            <label for="horaFin" class="form-label">Hora fin</label>
+                            <input type="time" id="horaFin" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <!-- Selector de color -->
+                    <div class="mb-3">
+                      <label class="form-label">Color del evento:</label>
+                      <div id="selectorColores" class="d-flex gap-2">
+                        <button type="button" class="btn color-evento-1 btn-sm" data-color="color-evento-1"></button>
+                        <button type="button" class="btn color-evento-2 btn-sm" data-color="color-evento-2"></button>
+                        <button type="button" class="btn color-evento-3 btn-sm" data-color="color-evento-3"></button>
+                        <button type="button" class="btn color-evento-4 btn-sm" data-color="color-evento-4"></button>
+                      </div>
+                    </div>
+
+                    <input type="hidden" id="eventoId">
+                </div>
+            <!---------Editar tareas-------------------->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" id="marcarCompletado">Completado</button>
+                    <button type="button" class="btn btn-primary" id="guardarTarea">Guardar</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/bootstrap5@6.1.9/index.global.min.js"></script>
-    <script src="https://unpkg.com/bs-brain@2.0.4/components/calendars/calendar-1/assets/controller/calendar-1.js"></script>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.9.1/fullcalendar.min.js"></script>
+    <script src="/JavaScript/Calendario.js"></script>
 </body>
 
 </html>

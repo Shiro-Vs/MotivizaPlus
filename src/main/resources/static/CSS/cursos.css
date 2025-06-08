@@ -1,4 +1,3 @@
-
 .container-main {
     background-color: white;
     height: calc(100vh - 40px);
@@ -7,103 +6,399 @@
     border-radius: 2rem 0rem 0rem 2rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     position: fixed;
-    padding: 60px;
 }
 
-/* Botón con fondo */
-.btn-light-purple {
-  background-color: #d8cdff;
+.contenido {
+    display: flex;
+    height: 100%;
+}
+
+/*-------------------------------------- Seccion izquierda ---------------------------------*/
+.seccion-izquierda {
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  overflow-y: auto;
+  flex: 3;
+}
+
+.seccion-izquierda::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari y Opera */
+}
+
+.titulo-cursos {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.descripcion-cursos {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.bloque-semana {
+  margin-top: 25px;
+}
+
+.titulo-semana {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.card-tarea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eee;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-tarea:hover {
+  transform: scale(1.01);
+}
+
+.info-izquierda {
+  flex: 2;
+}
+
+.titulo-tarea {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.descripcion-tarea {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+.fecha-vencimiento {
+  font-size: 13px;
+  color: #777;
+}
+
+.puntos-tarea {
+  flex: 0.5;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.accion-derecha {
+  flex: 1;
+  text-align: right;
+}
+
+.texto-accion {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.boton-ir {
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #3bcc75;
+  color: white;
   border: none;
-  border-radius: 15px;
-  padding: 5px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.boton-ir:hover {
+  background-color: #31a663;
+}
+
+/* Colores según estado de tarea */
+.card-tarea.realizada {
+  background-color: #d4f8d4;
+  border-left: 6px solid #2ecc71;
+}
+
+.card-tarea.por-vencer {
+  background-color: #fff3cd;
+  border-left: 6px solid #f39c12;
+}
+
+.card-tarea.no-realizada {
+  background-color: #f8d7da;
+  border-left: 6px solid #e74c3c;
+}
+
+.card-tarea.pendiente {
+  background-color: #d6f0ff;
+  border-left: 6px solid #3498db;
+}
+
+/*----------------------------- Seccion derecha -------------------------------*/
+.barra-derecha {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #e8ebff;
+    padding: 20px;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+/* Mini perfil */
+.mini-perfil {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #00000000;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 0 20px;
+    gap: 20px;
+}
+
+.perfil-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.nombre {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.rol {
+    margin: 0;
+    font-size: 14px;
+    color: gray;
+    text-align: left;
+}
+
+.foto-perfil {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 30px;
+}
+
+/*------------------------------------ Puntos ----------------------------------*/
+/* Contenedor principal */
+.box-puntos {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.contenido-puntos {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Resumen de tareas */
+.resumen-tareas {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.item-tarea {
+  flex: 1;
+}
+
+.titulo-tarea {
+  font-weight: bold;
+  color: #555;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.valor-tarea {
+  font-size: 20px;
+  font-weight: bold;
+  color: #13175B;
+}
+
+/* Puntos */
+.monto-puntos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titulo-puntos {
+  font-weight: bold;
+  font-size: 18px;
+  color: #555;
+}
+
+.valor-puntos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #13175B;
+}
+
+.img-moneda {
+  width: 40px;
+  height: 40px;
+}
+/*------------------------------------ Leyenda de cursos ----------------------------------*/
+
+/* Tarjeta leyenda */
+.leyenda-tareas {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Título */
+.titulo-leyenda {
+  margin: 0 0 15px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Contenedor horizontal */
+.items-leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Item individual */
+.item-leyenda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Círculo de color */
+.circulo {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+/* Colores */
+.verde {
+  background-color: #4caf50;
+}
+
+.naranja {
+  background-color: #ff9800;
+}
+
+.rojo {
+  background-color: #f44336;
+}
+
+.celeste {
+  background-color: #00bcd4;
+}
+
+/* Texto de cada leyenda */
+.texto-leyenda {
+  font-size: 12px;
+  color: #333;
+}
+
+/* ---------------------Sección Pomodoro ------------------------*/
+.pomodoro-avanzado {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.titulo-pomodoro {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #13175B;
   font-weight: bold;
 }
 
-/* Tarjetas de tareas */
-.tarea-card {
-  background-color: #f1efff;
-  border-radius: 20px;
+.modos-pomodoro {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.modos-pomodoro button {
+  background-color: #f1f1f1;
   border: none;
+  padding: 8px 12px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-/* Contenido de la tarjeta con padding */
-.tarea-card .card-body {
-  padding: 20px;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-/* Botón circular */
-.btn-circle {
-  width: 40px;
-  height: 40px;
-  background-color: #0f0f63;
+.modos-pomodoro button:hover {
+  background-color: #3bcc75;
   color: white;
+}
+
+.contenedor-circulo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.circulo-temporizador {
+  width: 180px;
+  height: 180px;
+  border: 8px solid #3bcc75;
   border-radius: 50%;
-  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Tipografía responsiva */
-h1, h2, h3, h4, h5, h6 {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-}
-p, span, small, div {
-  font-size: clamp(0.9rem, 1.5vw, 1.2rem); /* <- Ajusta para cambiar tamaño */
-}
-
-/* Evitar que el texto se pegue a los bordes */
-.main-content {
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
-
-/* Barra derecha */
-.barra-derecha {
-  flex: 1;
-  background-color: #e8e8e8;
-  padding: 20px;
-  height: auto;
-}
-
-.mini-perfil {
-  display: flex;
-  align-items: center; 
-  justify-content: flex-end;
-  background-color: #00000000;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 0 0 20px;
-  gap: 20px; 
-}
-
-.perfil-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end; 
-}
-
-.nombre {
-  margin: 0;
-  font-size: 16px;
+.circulo-temporizador span {
+  font-size: 45px;
   font-weight: bold;
-  text-align: left;
+  color: #13175B;
 }
 
-.rol {
-  margin: 0;
+.controles-pomodoro {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.controles-pomodoro button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #13175B;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
   font-size: 14px;
-  color: gray;
-  text-align: left;
+  transition: background-color 0.3s;
 }
 
-.foto-perfil {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 30px;
+.controles-pomodoro button:hover {
+  background-color: #3bcc75;
 }
