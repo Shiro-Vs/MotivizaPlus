@@ -27,175 +27,148 @@
                 <h1 class="titulo-cursos">Cursos Disponibles</h1>
 
                 <div class="cards">
-                    <!-- Cards aquí -->
-                    <div class="card">
-                        <a href="/cursos" class="text-decoration-none text-dark">
-                            <img src="/Recursos/cursos.png" class="card-imagen" alt="Imagen del curso">
-                            <div class="card-body">
-                                <h5 class="card-title text-center">INTEGRADOR</h5>
-                                <p class="card-text text-center mb-1"><strong>Aula:</strong> 301</p>
-                                <p class="card-text text-center"><strong>Docente:</strong> Ing. Pérez</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card">
-                        <a href="/cursos" class="text-decoration-none text-dark">
-                            <img src="/Recursos/cursos.png" class="card-imagen" alt="Imagen del curso">
-                            <div class="card-body">
-                                <h5 class="card-title text-center">INTEGRADOR</h5>
-                                <p class="card-text text-center mb-1"><strong>Aula:</strong> 301</p>
-                                <p class="card-text text-center"><strong>Docente:</strong> Ing. Pérez</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card">
-                        <a href="cursos" class="text-decoration-none text-dark">
-                            <img src="/Recursos/cursos.png" class="card-imagen" alt="Imagen del curso">
-                            <div class="card-body">
-                                <h5 class="card-title text-center">INTEGRADOR</h5>
-                                <p class="card-text text-center mb-1"><strong>Aula:</strong> 301</p>
-                                <p class="card-text text-center"><strong>Docente:</strong> Ing. Pérez</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card">
+                    <div class="card" th:each="curso : ${cursos}">
                         <a href="#" class="text-decoration-none text-dark">
                             <img src="/Recursos/cursos.png" class="card-imagen" alt="Imagen del curso">
                             <div class="card-body">
-                                <h5 class="card-title text-center">INTEGRADOR</h5>
-                                <p class="card-text text-center mb-1"><strong>Aula:</strong> 301</p>
-                                <p class="card-text text-center"><strong>Docente:</strong> Ing. Pérez</p>
+                                <h5 class="card-title text-center" th:text="${curso.nombre}">Nombre Curso</h5>
+                                <p class="card-text text-center mb-1"><strong>Aula:</strong> <span
+                                        th:text="${curso.aula}">Aula</span></p>
+                                <p class="card-text text-center"><strong>Docente:</strong> <span
+                                        th:text="${curso.docente}">Docente</span></p>
                             </div>
                         </a>
                     </div>
                 </div>
             </div>
+        
 
-            <!-- Barra lateral a la derecha -->
-            <div class="barra-derecha">
+        <!-- Barra lateral a la derecha -->
+        <div class="barra-derecha">
 
-                <div class="mini-perfil">
-                    <div class="perfil-info">
-                        <h5 class="nombre">Diego Castro</h5>
-                        <p class="rol">Estudiante</p>
-                    </div>
-                    <img src="/Recursos/perfil.jpg" alt="Foto de perfil" class="foto-perfil">
+            <div class="mini-perfil">
+                <div class="perfil-info">
+                    <h5 class="nombre" th:text="${alumno.nombre} + ' ' + ${alumno.apellido}">Diego Castro</h5>
+                    <p class="rol">Estudiante</p>
                 </div>
-
-
-                <!-- Sección de Billetera UTP -->
-                <div class="billetera">
-                    <h3 class="titulo-billetera">Billetera UTP</h3>
-                    <div class="contenido-billetera">
-                        <img src="/Recursos/billetera.png" alt="Billetera" class="icono-billetera">
-                        <div class="cantidad-monedas">
-                            <span class="monedas">120</span>
-                            <img src="/Recursos/utpcoin.png" alt="Moneda" class="icono-moneda">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sección de actividades pendientes con scroll oculto -->
-                <div class="actividades-pendientes">
-                    <h3 class="titulo-actividades">Actividades pendientes</h3>
-                    <p class="subtitulo-semana">Semana 13 &nbsp; | &nbsp; 7/06 al 14/06</p>
-
-                    <div class="contenedor-lista">
-                        <ul class="lista-actividades">
-                            <!-- Tareas de ejemplo -->
-                            <li class="actividad-card urgente">
-                                <div class="info-tarea">
-                                    <strong>INTEGRADOR</strong>
-                                    <p class="titulo">Informe Final</p>
-                                    <span class="puntos">Puntos: 20</span>
-                                </div>
-                                <div class="fecha-vencimiento">Vence: 08/06</div>
-                            </li>
-
-                            <li class="actividad-card normal">
-                                <div class="info-tarea">
-                                    <strong>ALGORITMOS</strong>
-                                    <p class="titulo">Práctica 5</p>
-                                    <span class="puntos">Puntos: 15</span>
-                                </div>
-                                <div class="fecha-vencimiento">Vence: 12/06</div>
-                            </li>
-                            <li class="actividad-card urgente">
-                                <div class="info-tarea">
-                                    <strong>INTEGRADOR</strong>
-                                    <p class="titulo">Informe Final</p>
-                                    <span class="puntos">Puntos: 20</span>
-                                </div>
-                                <div class="fecha-vencimiento">Vence: 08/06</div>
-                            </li>
-
-                            <li class="actividad-card normal">
-                                <div class="info-tarea">
-                                    <strong>ALGORITMOS</strong>
-                                    <p class="titulo">Práctica 5</p>
-                                    <span class="puntos">Puntos: 15</span>
-                                </div>
-                                <div class="fecha-vencimiento">Vence: 12/06</div>
-                            </li>
-                            <li class="actividad-card urgente">
-                                <div class="info-tarea">
-                                    <strong>INTEGRADOR</strong>
-                                    <p class="titulo">Informe Final</p>
-                                    <span class="puntos">Puntos: 20</span>
-                                </div>
-                                <div class="fecha-vencimiento">Vence: 08/06</div>
-                            </li>
-
-                            <li class="actividad-card normal">
-                                <div class="info-tarea">
-                                    <strong>ALGORITMOS</strong>
-                                    <p class="titulo">Práctica 5</p>
-                                    <span class="puntos">Puntos: 15</span>
-                                </div>
-                                <div class="fecha-vencimiento">Vence: 12/06</div>
-                            </li>
-                            <li class="actividad-card urgente">
-                                <div class="info-tarea">
-                                    <strong>INTEGRADOR</strong>
-                                    <p class="titulo">Informe Final</p>
-                                    <span class="puntos">Puntos: 20</span>
-                                </div>
-                                <div class="fecha-vencimiento">Vence: 08/06</div>
-                            </li>
-
-                            <li class="actividad-card normal">
-                                <div class="info-tarea">
-                                    <strong>ALGORITMOS</strong>
-                                    <p class="titulo">Práctica 5</p>
-                                    <span class="puntos">Puntos: 15</span>
-                                </div>
-                                <div class="fecha-vencimiento">Vence: 12/06</div>
-                            </li>
-                            <li class="actividad-card urgente">
-                                <div class="info-tarea">
-                                    <strong>INTEGRADOR</strong>
-                                    <p class="titulo">Informe Final</p>
-                                    <span class="puntos">Puntos: 20</span>
-                                </div>
-                                <div class="fecha-vencimiento">Vence: 08/06</div>
-                            </li>
-
-                            <li class="actividad-card normal">
-                                <div class="info-tarea">
-                                    <strong>ALGORITMOS</strong>
-                                    <p class="titulo">Práctica 5</p>
-                                    <span class="puntos">Puntos: 15</span>
-                                </div>
-                                <div class="fecha-vencimiento">Vence: 12/06</div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Puedes seguir agregando más tareas -->
+                <img src="/Recursos/perfil.jpg" alt="Foto de perfil" class="foto-perfil">
             </div>
 
 
+
+            <!-- Sección de Billetera UTP -->
+            <div class="billetera">
+                <h3 class="titulo-billetera">Billetera UTP</h3>
+                <div class="contenido-billetera">
+                    <img src="/Recursos/billetera.png" alt="Billetera" class="icono-billetera">
+                    <div class="cantidad-monedas">
+                        <span class="monedas">120</span>
+                        <img src="/Recursos/utpcoin.png" alt="Moneda" class="icono-moneda">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de actividades pendientes con scroll oculto -->
+            <div class="actividades-pendientes">
+                <h3 class="titulo-actividades">Actividades pendientes</h3>
+                <p class="subtitulo-semana">Semana 13 &nbsp; | &nbsp; 7/06 al 14/06</p>
+
+                <div class="contenedor-lista">
+                    <ul class="lista-actividades">
+                        <!-- Tareas de ejemplo -->
+                        <li class="actividad-card urgente">
+                            <div class="info-tarea">
+                                <strong>INTEGRADOR</strong>
+                                <p class="titulo">Informe Final</p>
+                                <span class="puntos">Puntos: 20</span>
+                            </div>
+                            <div class="fecha-vencimiento">Vence: 08/06</div>
+                        </li>
+
+                        <li class="actividad-card normal">
+                            <div class="info-tarea">
+                                <strong>ALGORITMOS</strong>
+                                <p class="titulo">Práctica 5</p>
+                                <span class="puntos">Puntos: 15</span>
+                            </div>
+                            <div class="fecha-vencimiento">Vence: 12/06</div>
+                        </li>
+                        <li class="actividad-card urgente">
+                            <div class="info-tarea">
+                                <strong>INTEGRADOR</strong>
+                                <p class="titulo">Informe Final</p>
+                                <span class="puntos">Puntos: 20</span>
+                            </div>
+                            <div class="fecha-vencimiento">Vence: 08/06</div>
+                        </li>
+
+                        <li class="actividad-card normal">
+                            <div class="info-tarea">
+                                <strong>ALGORITMOS</strong>
+                                <p class="titulo">Práctica 5</p>
+                                <span class="puntos">Puntos: 15</span>
+                            </div>
+                            <div class="fecha-vencimiento">Vence: 12/06</div>
+                        </li>
+                        <li class="actividad-card urgente">
+                            <div class="info-tarea">
+                                <strong>INTEGRADOR</strong>
+                                <p class="titulo">Informe Final</p>
+                                <span class="puntos">Puntos: 20</span>
+                            </div>
+                            <div class="fecha-vencimiento">Vence: 08/06</div>
+                        </li>
+
+                        <li class="actividad-card normal">
+                            <div class="info-tarea">
+                                <strong>ALGORITMOS</strong>
+                                <p class="titulo">Práctica 5</p>
+                                <span class="puntos">Puntos: 15</span>
+                            </div>
+                            <div class="fecha-vencimiento">Vence: 12/06</div>
+                        </li>
+                        <li class="actividad-card urgente">
+                            <div class="info-tarea">
+                                <strong>INTEGRADOR</strong>
+                                <p class="titulo">Informe Final</p>
+                                <span class="puntos">Puntos: 20</span>
+                            </div>
+                            <div class="fecha-vencimiento">Vence: 08/06</div>
+                        </li>
+
+                        <li class="actividad-card normal">
+                            <div class="info-tarea">
+                                <strong>ALGORITMOS</strong>
+                                <p class="titulo">Práctica 5</p>
+                                <span class="puntos">Puntos: 15</span>
+                            </div>
+                            <div class="fecha-vencimiento">Vence: 12/06</div>
+                        </li>
+                        <li class="actividad-card urgente">
+                            <div class="info-tarea">
+                                <strong>INTEGRADOR</strong>
+                                <p class="titulo">Informe Final</p>
+                                <span class="puntos">Puntos: 20</span>
+                            </div>
+                            <div class="fecha-vencimiento">Vence: 08/06</div>
+                        </li>
+
+                        <li class="actividad-card normal">
+                            <div class="info-tarea">
+                                <strong>ALGORITMOS</strong>
+                                <p class="titulo">Práctica 5</p>
+                                <span class="puntos">Puntos: 15</span>
+                            </div>
+                            <div class="fecha-vencimiento">Vence: 12/06</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Puedes seguir agregando más tareas -->
         </div>
+
+
+    </div>
 
     </div>
     </div>

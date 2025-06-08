@@ -1,20 +1,28 @@
 package com.motivizaplus.motivizaplus.Service;
 
-import java.util.Optional;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import com.motivizaplus.motivizaplus.Model.Alumno;
 import org.springframework.stereotype.Service;
 
-import com.motivizaplus.motivizaplus.Model.Alumno;
-import com.motivizaplus.motivizaplus.Repository.AlumnoRepository;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class AlumnoService {
 
-    @Autowired
-    private AlumnoRepository alumnoRepository;
+    private List<Alumno> alumnos = new ArrayList<>();
 
-    public Optional<Alumno> validarLogin(String correo, String password) {
-        return alumnoRepository.findByCorreoAndPassword(correo, password);
+    public AlumnoService() {
+        // Simulando usuarios registrados
+        alumnos.add(new Alumno("Juan", "Pérez", "juan@gmail.com", "1234"));
+        alumnos.add(new Alumno("Ana", "Gómez", "ana@gmail.com", "abcd"));
+    }
+
+    public Alumno verificarCredenciales(String correo, String password) {
+        for (Alumno a : alumnos) {
+            if (a.getCorreo().equalsIgnoreCase(correo) && a.getPassword().equals(password)) {
+                return a;
+            }
+        }
+        return null;
     }
 }

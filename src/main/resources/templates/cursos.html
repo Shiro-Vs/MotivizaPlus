@@ -30,221 +30,151 @@
         <!-- Semana 1 -->
         <div class="bloque-semana">
           <h2 class="titulo-semana">Semana 1</h2>
-          <div class="card-tarea realizada">
-            <div class="info-izquierda">
-              <h3 class="titulo-tarea">Informe inicial</h3>
-              <p class="descripcion-tarea">Descripción breve del informe inicial.</p>
-              <span class="fecha-vencimiento">Vence: 06/06 - 23:59</span>
-            </div>
-            <div class="puntos-tarea">+15 pts</div>
-            <div class="accion-derecha">
-              <p class="texto-accion">Ir a la actividad</p>
-              <button class="boton-ir">Acceder</button>
-            </div>
-          </div>
-        </div>
 
-        <!-- Semana 2 -->
-        <div class="bloque-semana">
-          <h2 class="titulo-semana">Semana 2</h2>
-          <div class="card-tarea por-vencer">
+          <div th:each="actividad : ${actividades}" class="card-tarea realizada">
             <div class="info-izquierda">
-              <h3 class="titulo-tarea">Entrega parcial</h3>
-              <p class="descripcion-tarea">Avance del proyecto integrador.</p>
-              <span class="fecha-vencimiento">Vence: 10/06 - 23:59</span>
+              <h3 class="titulo-tarea" th:text="${actividad.nombre}">Título tarea</h3>
+              <p class="descripcion-tarea" th:text="${actividad.descripcion}">Descripción</p>
+              <span class="fecha-vencimiento"
+                th:text="'Vence: ' + ${#temporals.format(actividad.fechaEntrega, 'dd/MM')} + ' - 23:59'">
+                Vence: 06/06 - 23:59
+              </span>
             </div>
-            <div class="puntos-tarea">+20 pts</div>
+            <div class="puntos-tarea" th:text="'+' + ${actividad.puntos} + ' pts'">+15 pts</div>
             <div class="accion-derecha">
               <p class="texto-accion">Ir a la actividad</p>
               <button class="boton-ir">Acceder</button>
             </div>
           </div>
 
-          <div class="card-tarea no-realizada">
-            <div class="info-izquierda">
-              <h3 class="titulo-tarea">Autoevaluación</h3>
-              <p class="descripcion-tarea">Cuestionario sobre avances.</p>
-              <span class="fecha-vencimiento">Vence: 10/06 - 17:00</span>
-            </div>
-            <div class="puntos-tarea">+10 pts</div>
-            <div class="accion-derecha">
-              <p class="texto-accion">Ir a la actividad</p>
-              <button class="boton-ir">Acceder</button>
+
+          <!-- Modal -->
+          <div id="modal-tarea" class="modal">
+            <div class="contenido-modal">
+              <span id="cerrar-modal" class="cerrar">&times;</span>
+              <h2 class="titulo-modal"><i class="bi bi-journal-text"></i> Informe inicial</h2>
+              <p class="descripcion-modal">Este informe presenta los objetivos, metodología y entregables del proyecto.
+              </p>
+              <p class="fecha-modal"><i class="bi bi-calendar-event"></i> Vence: 06/06 - 23:59</p>
+              <p class="puntos-modal"><i class="bi bi-star-fill"></i> Recompensa: 15 pts</p>
+
+              <div class="subida-archivos">
+                <i class="bi bi-upload"></i>
+                <p>Arrastra tu archivo aquí o haz clic para subir</p>
+                <input type="file" id="input-archivo" hidden>
+              </div>
+
+              <button class="btn-enviar"><i class="bi bi-send"></i> Enviar</button>
             </div>
           </div>
 
-          <div class="card-tarea pendiente">
-            <div class="info-izquierda">
-              <h3 class="titulo-tarea">Informe final</h3>
-              <p class="descripcion-tarea">Entrega completa del proyecto.</p>
-              <span class="fecha-vencimiento">Vence: 14/06 - 23:59</span>
+
+
+          <!------------------ Barra lateral a la derecha -------------------->
+          <div class="barra-derecha">
+            <div class="mini-perfil">
+              <div class="perfil-info">
+                <h5 class="nombre">Diego Castro</h5>
+                <p class="rol">Estudiante</p>
+              </div>
+              <img src="/Recursos/perfil.jpg" alt="Foto de perfil" class="foto-perfil">
             </div>
-            <div class="puntos-tarea">+25 pts</div>
-            <div class="accion-derecha">
-              <p class="texto-accion">Ir a la actividad</p>
-              <button class="boton-ir">Acceder</button>
+
+            <!-- Sección Pomodoro -->
+            <div class="pomodoro-avanzado">
+              <h3 class="titulo-pomodoro">POMODORO</h3>
+
+              <!-- Botones de modo -->
+              <div class="modos-pomodoro">
+                <button onclick="setModo('pomodoro')">Pomodoro</button>
+                <button onclick="setModo('descanso-corto')">Pausa corta</button>
+                <button onclick="setModo('descanso-largo')">Pausa larga</button>
+              </div>
+
+              <!-- Círculo del temporizador -->
+              <div class="contenedor-circulo">
+                <div class="circulo-temporizador">
+                  <span id="temporizador">25:00</span>
+                </div>
+              </div>
+
+              <!-- Controles -->
+              <div class="controles-pomodoro">
+                <button onclick="iniciarPomodoro()">Iniciar</button>
+                <button onclick="pausarPomodoro()">Pausar</button>
+                <button onclick="reiniciarPomodoro()">Reiniciar</button>
+              </div>
             </div>
+
+            <!-- Sección puntos y estadísticas -->
+            <div class="box-puntos">
+              <div class="contenido-puntos">
+                <!-- Puntos del curso -->
+                <div class="monto-puntos">
+                  <p class="titulo-puntos">Puntos del curso</p>
+                  <div class="valor-puntos">
+                    <span>120</span>
+                    <img src="/Recursos/utpcoin.png" alt="Moneda" class="img-moneda">
+                  </div>
+                </div>
+                <!-- Estadísticas de tareas -->
+                <div class="resumen-tareas">
+                  <div class="item-tarea">
+                    <p class="titulo-tarea">Tareas realizadas</p>
+                    <p class="valor-tarea">5</p>
+                  </div>
+                  <div class="item-tarea">
+                    <p class="titulo-tarea">Pendientes</p>
+                    <p class="valor-tarea">12</p>
+                  </div>
+                  <div class="item-tarea">
+                    <p class="titulo-tarea">No realizadas</p>
+                    <p class="valor-tarea">3</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Leyenda de colores -->
+            <div class="leyenda-tareas">
+              <h3 class="titulo-leyenda">Leyenda de actividades</h3>
+              <div class="items-leyenda">
+                <div class="item-leyenda">
+                  <span class="circulo verde"></span>
+                  <span class="texto-leyenda">Realizada</span>
+                </div>
+                <div class="item-leyenda">
+                  <span class="circulo naranja"></span>
+                  <span class="texto-leyenda">Por vencer</span>
+                </div>
+                <div class="item-leyenda">
+                  <span class="circulo rojo"></span>
+                  <span class="texto-leyenda">No realizada</span>
+                </div>
+                <div class="item-leyenda">
+                  <span class="circulo celeste"></span>
+                  <span class="texto-leyenda">Pendiente</span>
+                </div>
+              </div>
+            </div>
+
+
+
+
           </div>
 
-          <!-- Semana 1 -->
-          <div class="bloque-semana">
-            <h2 class="titulo-semana">Semana 3</h2>
-            <div class="card-tarea realizada">
-              <div class="info-izquierda">
-                <h3 class="titulo-tarea">Informe inicial</h3>
-                <p class="descripcion-tarea">Descripción breve del informe inicial.</p>
-                <span class="fecha-vencimiento">Vence: 06/06 - 23:59</span>
-              </div>
-              <div class="puntos-tarea">+15</div>
-              <div class="accion-derecha">
-                <p class="texto-accion">Ir a la actividad</p>
-                <button class="boton-ir">Acceder</button>
-              </div>
-            </div>
-          </div>
 
-          <!-- Semana 1 -->
-          <div class="bloque-semana">
-            <h2 class="titulo-semana">Semana 4</h2>
-            <div class="card-tarea realizada">
-              <div class="info-izquierda">
-                <h3 class="titulo-tarea">Informe inicial</h3>
-                <p class="descripcion-tarea">Descripción breve del informe inicial.</p>
-                <span class="fecha-vencimiento">Vence: 06/06 - 23:59</span>
-              </div>
-              <div class="puntos-tarea">+15 pts</div>
-              <div class="accion-derecha">
-                <p class="texto-accion">Ir a la actividad</p>
-                <button class="boton-ir">Acceder</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Semana 1 -->
-          <div class="bloque-semana">
-            <h2 class="titulo-semana">Semana 5</h2>
-            <div class="card-tarea realizada">
-              <div class="info-izquierda">
-                <h3 class="titulo-tarea">Informe inicial</h3>
-                <p class="descripcion-tarea">Descripción breve del informe inicial.</p>
-                <span class="fecha-vencimiento">Vence: 06/06 - 23:59</span>
-              </div>
-              <div class="puntos-tarea">+15 pts</div>
-              <div class="accion-derecha">
-                <p class="texto-accion">Ir a la actividad</p>
-                <button class="boton-ir">Acceder</button>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-
-
-
-      <!------------------ Barra lateral a la derecha -------------------->
-      <div class="barra-derecha">
-        <div class="mini-perfil">
-          <div class="perfil-info">
-            <h5 class="nombre">Diego Castro</h5>
-            <p class="rol">Estudiante</p>
-          </div>
-          <img src="/Recursos/perfil.jpg" alt="Foto de perfil" class="foto-perfil">
-        </div>
-
-        <!-- Sección Pomodoro -->
-        <div class="pomodoro-avanzado">
-          <h3 class="titulo-pomodoro">POMODORO</h3>
-
-          <!-- Botones de modo -->
-          <div class="modos-pomodoro">
-            <button onclick="setModo('pomodoro')">Pomodoro</button>
-            <button onclick="setModo('descanso-corto')">Pausa corta</button>
-            <button onclick="setModo('descanso-largo')">Pausa larga</button>
-          </div>
-
-          <!-- Círculo del temporizador -->
-          <div class="contenedor-circulo">
-            <div class="circulo-temporizador">
-              <span id="temporizador">25:00</span>
-            </div>
-          </div>
-
-          <!-- Controles -->
-          <div class="controles-pomodoro">
-            <button onclick="iniciarPomodoro()">Iniciar</button>
-            <button onclick="pausarPomodoro()">Pausar</button>
-            <button onclick="reiniciarPomodoro()">Reiniciar</button>
-          </div>
-        </div>
-
-        <!-- Sección puntos y estadísticas -->
-        <div class="box-puntos">
-          <div class="contenido-puntos">
-            <!-- Puntos del curso -->
-            <div class="monto-puntos">
-              <p class="titulo-puntos">Puntos del curso</p>
-              <div class="valor-puntos">
-                <span>120</span>
-                <img src="/Recursos/utpcoin.png" alt="Moneda" class="img-moneda">
-              </div>
-            </div>
-            <!-- Estadísticas de tareas -->
-            <div class="resumen-tareas">
-              <div class="item-tarea">
-                <p class="titulo-tarea">Tareas realizadas</p>
-                <p class="valor-tarea">5</p>
-              </div>
-              <div class="item-tarea">
-                <p class="titulo-tarea">Pendientes</p>
-                <p class="valor-tarea">12</p>
-              </div>
-              <div class="item-tarea">
-                <p class="titulo-tarea">No realizadas</p>
-                <p class="valor-tarea">3</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Leyenda de colores -->
-        <div class="leyenda-tareas">
-          <h3 class="titulo-leyenda">Leyenda de actividades</h3>
-          <div class="items-leyenda">
-            <div class="item-leyenda">
-              <span class="circulo verde"></span>
-              <span class="texto-leyenda">Realizada</span>
-            </div>
-            <div class="item-leyenda">
-              <span class="circulo naranja"></span>
-              <span class="texto-leyenda">Por vencer</span>
-            </div>
-            <div class="item-leyenda">
-              <span class="circulo rojo"></span>
-              <span class="texto-leyenda">No realizada</span>
-            </div>
-            <div class="item-leyenda">
-              <span class="circulo celeste"></span>
-              <span class="texto-leyenda">Pendiente</span>
-            </div>
-          </div>
-        </div>
-
-
-
 
       </div>
-
-
     </div>
 
-  </div>
-  </div>
 
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Script para el temporizador Pomodoro -->
-  <script src="/JavaScript/Pomodoro.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script para el temporizador Pomodoro -->
+    <script src="/JavaScript/Pomodoro.js"></script>
+    <script src="/JavaScript/tarea.js"></script>
 </body>
 
 </html>
